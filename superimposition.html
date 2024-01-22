@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="super.css">
+    <title>Tile Superimposer</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Tile Superimposer</h1>
+
+        <!-- Admin Panel for Tile Collection -->
+        <div id="adminPanel" class="hidden">
+            <h2>Admin Panel</h2>
+            <input type="file" id="tileInput" accept="image/*">
+            <button onclick="uploadTile()">Upload Tile</button>
+        </div>
+
+        <!-- User Panel for Wall and Tile Superimposing -->
+        <div id="userPanel" class="hidden">
+            <h2>User Panel</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <button onclick="handleImageUpload()">Upload Wall Image</button>
+
+            <div id="output" class="hidden">
+                <h3>Superimposed Image</h3>
+                <img id="superimposedImage" alt="Superimposed Image">
+                <button onclick="shareImage()">Share Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="super.js"></script>
+</body>
+</html>

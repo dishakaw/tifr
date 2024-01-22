@@ -1,0 +1,292 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    font-size: 1.5rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation Links Styles */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hero and Section Styles */
+.hero,
+section {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #f0f0f0;
+    position: relative;
+    margin-bottom: 20px; /* Adjust the margin between sections */
+    border-radius: 8px; /* Add border-radius for a box-like structure */
+}
+
+/* Call to Action Button Styles */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #555;
+}
+
+/* Additional CSS for Contact Form */
+#contact-form {
+    background-color: #f0f0f0;
+}
+
+#contact-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#contact-form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+
+/* Additional CSS for About Us Section */
+#about-us {
+    background-color: #f0f0f0;
+}
+
+.about-us-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.about-us-box {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden; /* Hide overflow to prevent flashing */
+    width: 200px; /* Set fixed width */
+    height: 200px; /* Set fixed height */
+}
+
+.about-us-box:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.5); /* Semi-transparent blue, adjust as needed */
+    animation: flash-bottom-top 1s forwards; /* Added animation for the flashing effect */
+    z-index: 1;
+}
+
+.about-us-box:hover .social-links {
+    display: flex;
+    position: absolute;
+    bottom: 50%; /* Display in the middle */
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2; /* Ensure social links appear above overlay */
+}
+
+.about-us-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease; /* Added transition for smooth fade-out */
+}
+
+.about-us-box h3 {
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease; /* Added transition for smooth fade-out */
+}
+
+.about-us-box:hover img,
+.about-us-box:hover h3 {
+    opacity: 0; /* Hide on hover */
+}
+
+.social-links {
+    display: none;
+    position: absolute;
+    bottom: 50%; /* Display in the middle */
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.5rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.social-links i {
+    transition: color 0.1s ease;
+}
+
+.social-links i:hover {
+    color: #007bff; /* Change to the color of your choice */
+}
+
+/* Additional styles to display text on hover */
+.social-links span {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Position above the social links */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.social-links a:hover span {
+    display: block; /* Show text on hover */
+}
+
+/* Flash Animation */
+@keyframes flash-bottom-top {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed; /* Fixed position to keep it at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Center h1 */
+h1 {
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #333;
+        text-align: center;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+   /* Footer Styles for Small Screens */
+    footer {
+        position: static;
+        margin-top: 20px;
+    }
+
+    /* Additional Responsive Styles for Contact Section */
+    .contact-box {
+        width: 100%; /* Adjust width for responsiveness */
+        max-width: 300px; /* Set a maximum width for larger screens */
+    }
+}
